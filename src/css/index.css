@@ -17,3 +17,6 @@
   margin-bottom: 6px;
   padding: 0 6px;
 }
+img {
+  max-width: 100%;
+}
