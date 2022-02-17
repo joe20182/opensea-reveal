@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.page-wrapper {
+  padding: 10px;
+}
+.link-input {
+  width: 400px;
+  height: 24px;
+  max-width: 100%;
+  margin-bottom: 6px;
+}
+.check-btn {
+  height: 24px;
+  margin-bottom: 6px;
+  padding: 0 6px;
+}
