@@ -11,6 +11,12 @@ async function handleCheck() {
   const tokenId = sLink.pop();
   const contractAddress = sLink.pop();
   // console.log(contractAddress, tokenId);
+
+  if (!tokenId || !contractAddress || !contractAddress.startsWith("0x")) {
+    alert("invalid arguments");
+    return;
+  }
+
   const tokenURI = await getTokenURI(contractAddress, tokenId);
   const metaData = await getMetaData(tokenURI);
   renderImage(metaData.image);
