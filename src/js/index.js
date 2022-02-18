@@ -39,20 +39,25 @@ function getTokenURI(address, id) {
   return new Promise((resolve, reject) => {
     setLoading(true);
 
-    contract.methods
-      .tokenURI(id)
-      .call()
-      .then((res) => {
-        // console.log(res);
-        setLoading(false);
-        resolve(res);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-        alert("please try it later QAQ");
-        reject();
-      });
+    try {
+      contract.methods
+        .tokenURI(id)
+        .call()
+        .then((res) => {
+          // console.log(res);
+          setLoading(false);
+          resolve(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+          alert("please try it later QAQ");
+          reject();
+        });
+    } catch (error) {
+      setLoading(false);
+      alert("please try it later QQ");
+    }
   });
 }
 
